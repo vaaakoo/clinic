@@ -205,3 +205,99 @@
     color: #fff;
   }
   
+  /* modal */
+
+  .modal-content {
+    width: 600px;
+    height: 450px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #FFF;
+    padding-top: 66px;
+    padding-left: 113px;
+    padding-right: 111px;
+    padding-bottom: 89px;
+  }
+
+  .modal-header{
+    border: none;
+    padding: 0px;
+  }
+
+  .modal-header h5 {
+    color: #18A4E1;
+    font-family: 'FiraGO';
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .modal-body {
+    padding: 0px;
+    margin-bottom: 42px;
+  }
+
+  .modal-body form {
+    margin-top: 44px;
+    display: grid;
+    gap: 20px;
+  }
+  form p {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .form-group {
+    width: 377px;
+    height: 48px;
+    flex-shrink: 0;
+    margin: 0px;
+    
+  }
+
+  .form-password {
+    margin-bottom: 5px;
+  }
+
+  .form-group input {
+    color: rgba(5, 51, 84, 0.30);
+    font-family: 'FiraGO';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    height: 90%;
+    padding: 15px 20px;
+    border-radius: 50px;
+    border: 1px solid #ECF2F8;
+  }
+
+
+  .forget-password {
+    color: #053354;
+    font-family: 'FiraGO';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: right;
+  }
+  
+  .modal-footer {
+    /* margin-top: 42px; */
+    flex-shrink: 0;
+    border: none;
+    justify-content: left;
+    padding: 0px;
+  }
+
+  .modal-footer button {
+    width: 180px;
+    height: 40px;
+    background: #053354;
+    color: #FFF;
+    border-radius: 50px;
+
+  }
+  
