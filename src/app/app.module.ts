@@ -10,6 +10,7 @@ import { ClientRegistrationComponent } from './client-registration/client-regist
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FormsModule } from '@angular/forms';
+import { BookingComponent } from './booking/booking.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     CalendarComponent,
     ClientRegistrationComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    BookingComponent
   ],
   imports: [
     BrowserModule,

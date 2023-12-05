@@ -26,6 +26,7 @@
     display: flex;
     flex-direction: column;
     margin: 184px 150px;
+    gap: 52px;
     
 }
 .rectangle-child p {
@@ -35,6 +36,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    margin: 0px;
 }
 
 .rectangle-child button {
@@ -219,8 +221,8 @@
     width: 107px;
     height: 30px;
     flex-shrink: 0;
-    align-items: center;
-    padding: 6px 10px;
+    align-content: center;
+    padding: 5px 10px;
     border-radius: 50px;
     background: rgba(236, 242, 248, 0.50);
   }
@@ -233,12 +235,14 @@
     font-weight: 400;
     line-height: normal;
     letter-spacing: 1.12px;
+    margin: 0px;
+    padding: 0px;
   }
 
   .upper img {
-    width: 24px;
-    height: 24px;
-    margin-right: 20px;
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
   }
 
   .upper {
@@ -259,7 +263,7 @@
     width: 157px;
     height: 157px;
     flex-shrink: 0;
-    margin-bottom: -10px;
+    margin-bottom: 15px;
   }
 
   .middle .card-name {
@@ -269,18 +273,18 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-bottom: -8px;
+    margin-bottom: 9px;
     padding-bottom: 0px;
   }
 
   .middle .stars img {
     width: 24px;
     height: 24px;
-    flex-shrink: 0;    
+    flex-shrink: 0; 
+    margin-bottom: 22px;   
   }
 
   .middle button {
-    margin-top: 22px;
     background-color: #FFF;
     width: 200px;
     height: 50px;
@@ -302,6 +306,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin-bottom: 6px;
   }
 
  
