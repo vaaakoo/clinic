@@ -21,3 +21,13 @@ body {
   margin-right: auto;
   font-family: 'FiraGO';
 }
+
+p {
+  padding: 0px;
+  margin: 0px;
+}
+
+body.modal-open {
+  overflow: hidden;
+  padding-right: 0 !important; /* Override the default padding-right */
+}
