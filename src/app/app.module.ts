@@ -12,6 +12,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { BookingComponent } from './booking/booking.component';
 import { CategoryComponent } from './category/category.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CategoryComponent } from './category/category.component';
     FooterComponent,
     HeaderComponent,
     BookingComponent,
-    CategoryComponent
+    CategoryComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
