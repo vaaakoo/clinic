@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HomeComponent } from './home/home.component';
-import { CalendarComponent } from './calendar/calendar.component';
 import { ClientRegistrationComponent } from './client-registration/client-registration.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -18,7 +17,6 @@ import { RegistrationComponent } from './registration/registration.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    CalendarComponent,
     ClientRegistrationComponent,
     FooterComponent,
     HeaderComponent,
