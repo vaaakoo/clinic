@@ -94,9 +94,22 @@
     justify-content: space-between;
   }
 
+  .activation {
+    display: grid;
+    gap: 10px;
+  }
+
+  .activation span {
+    padding-left: 20px;
+    color: #FF2C52;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
   .button {
-    margin-top: 10px;
-    /* margin-bottom: 125px; */
+    margin-top: 13px;
     margin-left: auto; /* Move the button to the right */
   }
   button {

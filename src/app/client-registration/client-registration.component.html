@@ -9,7 +9,7 @@
   
       
       <div class="form-group email-group">
-        <label for="email">იმეილი</label>
+        <label for="email">Email</label>
         <input type="email" id="email" name="email" [(ngModel)]="user.email" required class="email-input">
         <img class="right-arrow-img" src="../../assets/mail-right-arrow.png" alt="Right Arrow">
       </div>
@@ -28,7 +28,10 @@
           <label for="activationCode">აქტივაციის კოდი</label>
           <label class="vada" for="">ვადა 30წთ</label>
         </div>
-        <input type="text" id="activationCode" name="activationCode" [(ngModel)]="user.activationCode" required>
+        <div class="activation">
+          <input type="text" id="activationCode" name="activationCode" [(ngModel)]="user.activationCode" required>
+          <span>*ბმულის მოქმედების ვადა ამოიწურა</span>
+        </div>
       </div>
   
       <div class="form-group">

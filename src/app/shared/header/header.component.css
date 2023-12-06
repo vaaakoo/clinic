@@ -285,7 +285,6 @@
   }
   
   .modal-footer {
-    /* margin-top: 42px; */
     flex-shrink: 0;
     border: none;
     justify-content: left;
