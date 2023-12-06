@@ -128,5 +128,21 @@
         <!-- ცხრილი -->
         <div class="calendar">
             
+            <div class="custom-table">
+  <table>
+    <!-- Table Headers -->
+    <tr class="header-row">
+      <th colspan="8">Header without Border Divider</th>
+    </tr>
+    <!-- Table Rows -->
+    <ng-container *ngFor="let row of rows; let rowIndex = index">
+      <tr class="data-row" [class.without-border-divider]="rowIndex === 0">
+        <td *ngFor="let cell of row"></td>
+      </tr>
+    </ng-container>
+  </table>
+</div>
+              
+              
         </div>
 </div>
