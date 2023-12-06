@@ -11,12 +11,26 @@ export class RegistrationComponent {
     lastName: '',
     email: '',
     idNumber: '',
-    activationCode: '',
-    password: ''
+    password: '',
+    selectedCategory: ''
   };
 
+  categoryList: string[] = []; // Initialize as an empty array
+
+  ngOnInit() {
+    // You might want to call this in ngOnInit or any other lifecycle hook based on your requirements
+    this.showDropdown();
+  }
+
+  showDropdown() {
+    // Simulate an API call with setTimeout
+    setTimeout(() => {
+      // Replace this with your actual API call to fetch categories
+      this.categoryList = ['Category 1', 'Category 2', 'Category 3'];
+    }, 1000); // Simulate a delay of 1 second
+  }
+
   onSubmit() {
-    // You can handle form submission logic here
     console.log('Form submitted:', this.user);
   }
 
@@ -24,7 +38,7 @@ export class RegistrationComponent {
     const fileList: FileList | null = event.target.files;
     if (fileList && fileList.length > 0) {
         const imageFile: File = fileList[0];
-        // You can use 'imageFile' as needed, for example, store it in your 'user' object.
+
     }
 }
 
@@ -32,7 +46,7 @@ export class RegistrationComponent {
     const fileList: FileList | null = event.target.files;
     if (fileList && fileList.length > 0) {
         const cvFile: File = fileList[0];
-        // You can use 'cvFile' as needed, for example, store it in your 'user' object.
+
     }
 }
 }
