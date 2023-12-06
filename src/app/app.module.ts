@@ -11,6 +11,9 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { CategoryComponent } from './category/category.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { ClientPageComponent } from './client-page/client-page.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
+import { DoctorPageComponent } from './doctor-page/doctor-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { RegistrationComponent } from './registration/registration.component';
     FooterComponent,
     HeaderComponent,
     CategoryComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ClientPageComponent,
+    AdminPageComponent,
+    DoctorPageComponent
   ],
   imports: [
     BrowserModule,
