@@ -138,7 +138,7 @@
   .header-element-1 {
     display: flex;
     align-items: center;
-    gap: 9px;
+    gap: 20px;
   }
 
   .header-element2 {
