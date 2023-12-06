@@ -9,7 +9,6 @@ import { ClientRegistrationComponent } from './client-registration/client-regist
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FormsModule } from '@angular/forms';
-import { BookingComponent } from './booking/booking.component';
 import { CategoryComponent } from './category/category.component';
 import { RegistrationComponent } from './registration/registration.component';
 
@@ -20,7 +19,6 @@ import { RegistrationComponent } from './registration/registration.component';
     ClientRegistrationComponent,
     FooterComponent,
     HeaderComponent,
-    BookingComponent,
     CategoryComponent,
     RegistrationComponent
   ],
