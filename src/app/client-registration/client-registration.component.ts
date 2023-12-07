@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { RegistrationDetailsService } from '../shared/registration-details.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-client-registration',
@@ -7,17 +9,21 @@ import { Component } from '@angular/core';
 })
 export class ClientRegistrationComponent {
 
-  user = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    idNumber: '',
-    activationCode: '',
-    password: ''
-  };
+  constructor (public service: RegistrationDetailsService) {
+  }
+  
 
-  onSubmit() {
-    // You can handle form submission logic here
-    console.log('Form submitted:', this.user);
+  onSubmit(form:NgForm) {
+    
+    this.service.formSubmitted = true;
+    if(form.valid){
+      this.service.postRegistrationDetails()
+      .subscribe({
+        next: res => {
+          this.service.resetForm(form)
+        },
+        error: err => {console.log(err)}
+      })
+    }
   }
 }

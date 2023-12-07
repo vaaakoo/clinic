@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { RegistrationDetailsService } from '../shared/registration-details.service';
 
 @Component({
   selector: 'app-registration',
@@ -6,47 +8,65 @@ import { Component } from '@angular/core';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent {
-  user = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    idNumber: '',
-    password: '',
-    selectedCategory: ''
-  };
 
-  categoryList: string[] = []; // Initialize as an empty array
+  uploadedFileNames: string []= [];
 
-  ngOnInit() {
-    // You might want to call this in ngOnInit or any other lifecycle hook based on your requirements
-    this.showDropdown();
+  constructor(public service: RegistrationDetailsService) {
   }
 
-  showDropdown() {
-    // Simulate an API call with setTimeout
-    setTimeout(() => {
-      // Replace this with your actual API call to fetch categories
-      this.categoryList = ['Category 1', 'Category 2', 'Category 3'];
-    }, 1000); // Simulate a delay of 1 second
+  
+  categoryList: string[] = []; 
+
+  async ngOnInit() {
+    await this.showDropdown();
+    // Now that the dropdown data is loaded, you can proceed with any other initialization.
+  }
+  
+  async showDropdown(): Promise<void> {
+    return new Promise<void>((resolve) => {
+      setTimeout(() => {
+        this.categoryList = ['Category 1', 'Category 2', 'Category 3'];
+        resolve();
+      }, 1000);
+    });
   }
 
-  onSubmit() {
-    console.log('Form submitted:', this.user);
+  onSubmit(form:NgForm) {
+    this.service.formSubmitted = true;
+    if(form.valid){
+      this.service.postRegistrationDetails()
+      .subscribe({
+        next: res => {
+          this.service.resetForm(form)
+        },
+        error: err => {console.log(err)}
+      })
+    }
   }
 
   onImageChange(event: any) {
-    const fileList: FileList | null = event.target.files;
-    if (fileList && fileList.length > 0) {
-        const imageFile: File = fileList[0];
+    const file = event.currentTarget.files[0];
+    const formObj = new FormData();
+    formObj.append('file',file);
+    console.log(formObj)
+    this.service.postRegistrationDetails()
+    .subscribe((res: any) =>{
+      console.log(res)
+        this.uploadedFileNames.push(res);
+    })
 
-    }
 }
 
   onCVChange(event: any) {
-    const fileList: FileList | null = event.target.files;
-    if (fileList && fileList.length > 0) {
-        const cvFile: File = fileList[0];
+    const file = event.currentTarget.files[0];
+    const formObj = new FormData();
+    formObj.append('file',file);
+    console.log(formObj)
 
-    }
+    this.service.postRegistrationDetails()
+    .subscribe((res: any) =>{
+      console.log(res)
+        this.uploadedFileNames.push(res);
+    })
 }
 }

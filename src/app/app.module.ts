@@ -14,6 +14,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { ClientPageComponent } from './client-page/client-page.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { DoctorPageComponent } from './doctor-page/doctor-page.component';
+import { RegistrationDetailsComponent } from './registration-details/registration-details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,12 +28,14 @@ import { DoctorPageComponent } from './doctor-page/doctor-page.component';
     RegistrationComponent,
     ClientPageComponent,
     AdminPageComponent,
-    DoctorPageComponent
+    DoctorPageComponent,
+    RegistrationDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

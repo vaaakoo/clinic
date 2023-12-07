@@ -131,3 +131,6 @@
     background-color: #0d5b93;
   }
   
+  form.submitted input.ng-invalid {
+    border-color: red;
+  }
