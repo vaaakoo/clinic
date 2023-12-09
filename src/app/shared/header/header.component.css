@@ -67,12 +67,37 @@
     gap: 29px;
   }
 
+  .navbar-button2 {
+    margin-left: 131px;    
+    display: flex;
+    gap: 29px;
+  }
+
   .button-reg-aut {
     max-width: 280px;
     padding: 11px 23px 11px 23px;
     border-radius: 25px;
     border: 0;
     background: #F0FAFF;
+  }
+
+  .button-reg-aut img {
+    width: 36px;
+    height: 36px;
+    background-color: #053354;
+    border-radius: 50%;
+  }
+
+
+  .button-reg-aut2 {
+    width: 210px;
+    padding: 4px 26px 4px 5px;
+    border-radius: 25px;
+    border: 0;
+    background: #F0FAFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .button-registartion {
@@ -122,9 +147,9 @@
   
   .header-elements {
     display: flex;
-    margin-left: auto;
     margin-right: auto;
-    width: 1621px; /* Set max-width */
+    margin-left: auto;
+    width: 1622px; /* Set max-width */
     gap: 97px;
   }
   
@@ -193,6 +218,7 @@
   }
   
   .img-back {
+    margin-left: 17px;
     width: 50px;
     height: 50px;
     border-radius: 50%;

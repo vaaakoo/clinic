@@ -39,6 +39,7 @@ export class ClientRegistrationComponent implements OnInit {
         next:(res=>{
           console.log(res.message);
           this.signUpForm.reset();
+          this.router.navigate(['home']);
           alert(res.message)
         }),
         error:(err=>{

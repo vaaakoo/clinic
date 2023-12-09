@@ -11,6 +11,8 @@ import { ClientPageComponent } from './client-page/client-page.component';
 
 
 const routes: Routes = [
+  
+  // {path: 'home/autorize', component: AuthorizeComponent},
   {path: 'admin-page/category', component: CategoryComponent},
   { path: 'client-reg', component: ClientRegistrationComponent },
   { path: 'registration', component: RegistrationComponent },
