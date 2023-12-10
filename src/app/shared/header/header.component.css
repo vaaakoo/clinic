@@ -68,9 +68,9 @@
   }
 
   .navbar-button2 {
-    margin-left: 131px;    
+    margin-left: 106px;    
     display: flex;
-    gap: 29px;
+    gap: 20px;
   }
 
   .button-reg-aut {
@@ -81,23 +81,25 @@
     background: #F0FAFF;
   }
 
-  .button-reg-aut img {
-    width: 36px;
-    height: 36px;
-    background-color: #053354;
-    border-radius: 50%;
-  }
 
 
   .button-reg-aut2 {
-    width: 210px;
+    width: 230px;
     padding: 4px 26px 4px 5px;
     border-radius: 25px;
     border: 0;
     background: #F0FAFF;
     display: flex;
+    gap: 20px;
     align-items: center;
-    justify-content: space-between;
+  }
+
+  .button-reg-aut2 span {
+    color: #18A4E1;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 
   .button-registartion {

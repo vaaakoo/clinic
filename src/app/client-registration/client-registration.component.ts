@@ -44,6 +44,7 @@ export class ClientRegistrationComponent implements OnInit {
         }),
         error:(err=>{
           alert(err?.error.message)
+          console.log(err.message)
         })
       })
     } else {

@@ -16,9 +16,10 @@ import 'jquery';
 export class HeaderComponent implements OnInit {
   
   public loginForm!: FormGroup;
-  isLoggedIn: boolean = true;
+  isLoggedIn: boolean = false;
   isAdministrator: boolean = false; 
-
+  submissionSuccess: boolean = false;
+  users: any[] = [];
 
   constructor(
     private fb: FormBuilder,
@@ -29,20 +30,36 @@ export class HeaderComponent implements OnInit {
   ) {}
   
 
-  // Method to navigate to the registration page
+  // Method to navigate other page
   navigateToRegistration() {
     this.router.navigate(['/client-reg']);
   }
+  navigateAdmin() {
+    this.router.navigate(['/admin-page']);
+  }
+  navigateClient() {
+    this.router.navigate(['/client-page']);
+  }
+  navigateDoctor() {
+    this.router.navigate(['/doctor-page']);
+  }  
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    this.auth.getUsers().subscribe(
+      (res) => {
+        this.users = res;
+        console.log(this.users)
+      },
+      (error) => {
+        console.error('Error fetching users:', error);
+      }
+    );
     this.loginForm = this.fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
-  // navigateToAuthorization() {
-  //   this.router.navigate(['/authorization']);
-  // }
+
 
   onSubmit() {
     if (this.loginForm.valid) {
@@ -51,30 +68,26 @@ export class HeaderComponent implements OnInit {
         next: (res) => {
           console.log(res.message);
           this.loginForm.reset();
-
-          const isAdmin = res.User && res.User.isAdmin;
-          console.log(isAdmin.type)
-
+          
+          const isAdmin = res.message === "true";
           if (isAdmin) {
+            this.isAdministrator = true;
+          } else {
             this.isLoggedIn = true;
-            this.isLoggedIn = false;
-          } 
-  
-          console.log("Is Admin:", this.isAdministrator);
-          console.log("Is Logged In:", this.isLoggedIn);
-
-          // this.toast.success({detail:"SUCCESS", summary:res.message, duration: 5000});
-          const modalElement: any = $('#exampleModal');
-          if (modalElement) {
-            modalElement.modal('hide');
           }
-          this.router.navigate(['']);
+
+          console.log(this.isAdministrator + "is admin");
+          console.log(this.isLoggedIn + "is logged")
+          // this.toast.success({detail:"SUCCESS", summary:res.message, duration: 5000});
+
+          this.submissionSuccess = true;
+          
           
         },
         error: (err) => {
           alert(err?.error.message)
           // this.toast.error({detail:"ERROR", summary:"Something when wrong!", duration: 5000});
-          console.log(err);
+          // console.log(err);
         },
       });
     } else {

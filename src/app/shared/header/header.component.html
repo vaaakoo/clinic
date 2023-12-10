@@ -18,18 +18,18 @@
         </ul>
 
         <div [ngClass]="{'navbar-button': !isLoggedIn, 'navbar-button2': isLoggedIn || isAdministrator}">
-          <button class="button-reg-aut" *ngIf="isLoggedIn && !isAdministrator">
+          <button class="button-reg-aut" *ngIf="!isLoggedIn && !isAdministrator">
             <span class="button-registartion" (click)="navigateToRegistration()">რეგისტრაცია</span>
             <span class="button-aut" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"> / ავტორიზაცია</span>
           </button>
         
-          <!-- <button class="button-reg-aut2" *ngIf="isLoggedIn && !isAdministrator">
+          <button class="button-reg-aut2" (click)="navigateClient()" *ngIf="isLoggedIn && !isAdministrator">
             <img src="../../../assets/Ellipse20.png" alt="">
             <span class="button-registartion">მომხმარებელი</span>
-          </button> -->
+          </button>
         
-          <button class="button-reg-aut2" *ngIf="isAdministrator">
-            <img src="" alt="">
+          <button class="button-reg-aut2" (click)="navigateAdmin()" *ngIf="isAdministrator && !isLoggedIn">
+            <img src="../../../assets/Ellipse-222(1).png" alt="">
             <span class="button-registartion">ადმინისტრატორი</span>
           </button>
   
@@ -78,22 +78,23 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">ავტორიზაცია</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
-          </button>
+          </button> -->
         </div>
         <div class="modal-body">
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
-              <input type="text" class="form-control" formControlName="email" id="recipient-name" placeholder="ელ.ფოსტა/ ტელეფონის ნომერი">
+              <input type="text" class="form-control" formControlName="email" placeholder="ელ.ფოსტა/ ტელეფონის ნომერი">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control form-password" formControlName="password" id="recipient-name" placeholder="პაროლი">
+              <input type="text" class="form-control form-password" formControlName="password" placeholder="პაროლი">
               <span class="forget-password"><p>პაროლის აღდგენა</p></span>
             </div>
-           
+          
             <div class="modal-footer">
-              <button type="submit" >შესვლა</button>
+              <button type="submit" *ngIf="submissionSuccess" data-dismiss="modal">close</button>
+              <button type="submit" *ngIf="!submissionSuccess">შესვლა</button>
             </div>
           </form>
         </div>
