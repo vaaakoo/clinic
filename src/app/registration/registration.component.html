@@ -46,7 +46,7 @@
       <div class="form-group form-group1">
         <label for="image">სურათი</label>
         <div class="custom">
-          <input type="file" id="image" name="image" formControlName="image" (change)="onImageChange($event)">
+          <input type="file" id="image" name="image" #file (change)="uploadFile(file.files)" (click)="file.click()" >
           <label for="image" class="custom-label">
             <img src="../../assets/photo-outline.png" alt="Choose file">
           </label>
@@ -57,7 +57,7 @@
       <div class="form-group form-group1">
         <label for="cv">CV</label>
         <div class="custom">
-          <input type="file" id="cv" formControlName="cv" name="cv" (change)="onCVChange($event)">
+          <input type="file" id="cv" formControlName="cv" name="cv" >
           <label for="cv" class="custom-label">
             <img src="../../assets/document-new.png" alt="Choose file">
           </label>

@@ -3,6 +3,8 @@ import { AuthService } from '../services/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import ValidateForm from '../../helpers/validationform';
 import { Router } from '@angular/router';
+import { HttpClient, HttpEventType, HttpErrorResponse } from '@angular/common/http';
+import { EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-registration',
@@ -10,19 +12,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-  user = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    idNumber: '',
-    password: '',
-    selectedCategory: ''
-  };
+
+  progress!: number;
+  message!: string;
+  @Output() public onUploadFinished = new EventEmitter();
 
   categoryList: string[] = []; 
   public signUpForm!: FormGroup;
   type: string = 'password';
-  constructor(private fb : FormBuilder, private auth: AuthService, private router: Router ) { }
+  constructor(private fb : FormBuilder, private auth: AuthService, private router: Router, private http: HttpClient ) { }
 
   ngOnInit() {
     this.signUpForm = this.fb.group({
@@ -82,12 +80,28 @@ export class RegistrationComponent implements OnInit {
       ValidateForm.validateAllFormFields(this.signUpForm); 
     }
   }
+  
+  // upload image
+  uploadFile = (files:any) => {
+    if (files.length === 0) {
+      return;
+    }
+    let fileToUpload = <File>files[0];
+    const formData = new FormData();
+    formData.append('file', fileToUpload, fileToUpload.name);
 
-  onImageChange(event: any) {
-    
+    this.http.post('http://localhost:5100/api/User/upload', formData, { reportProgress: true, observe: 'events' })
+      .subscribe({
+        next: (event: any) => { // Specify the type of event
+          if (event.type === HttpEventType.UploadProgress)
+            this.progress = Math.round(100 * event.loaded / event.total);
+          else if (event.type === HttpEventType.Response) {
+            this.message = 'Upload success.';
+            this.onUploadFinished.emit(event.body);
+          }
+        },
+        error: (err: HttpErrorResponse) => console.log(err)
+      });
   }
 
-  onCVChange(event: any) {
-    
-  }
 }
