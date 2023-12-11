@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AdminPageComponent {
 
+  rows: number[][] = Array.from({ length: 10 }, () => Array(8).fill(0));
 }
