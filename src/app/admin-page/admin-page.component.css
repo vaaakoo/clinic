@@ -4,6 +4,36 @@
 
 }
 
+.rectangle {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rectangle-1 {
+  width: 28px;
+  height: 3px;
+  background-color: #000; 
+  border-radius: 10px;
+  background: #18A4E1;
+}
+
+.rectangle-2 {
+  width: 23px;
+  height: 3px;
+  background-color: #000; 
+  border-radius: 10px;
+  background: #18A4E1;
+}
+
+.rectangle-3 {
+  width: 16px;
+  height: 3px;
+  background-color: #000; 
+  border-radius: 10px;
+  background: #18A4E1;
+}
+
 .hero-hero {
     display: flex;
     flex-direction: column;
@@ -69,7 +99,14 @@
 }
 
 /* second-section */
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  gap: 61px;
+}
 .user {
+    margin-top: 70px;
     width: 750px;
     height: 426px;
     flex-shrink: 0;
@@ -78,15 +115,139 @@
     box-shadow: 0px 4px 30px 0px 
 }
 
+.change-sect {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.change-sect .adding {
+  width: 170px;
+  height: 50px;
+  border: none;
+  border-radius: 50px;
+  background: #3ACF99;
+}
+.adding p {
+  color: #FFF;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.change-sect .redact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 230px;
+  height: 50px;
+  border: none;
+  border-radius: 50px;
+  background: #ECF2F8;
+}
+
+.redact p {
+  color: #18A4E1;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.change-sect .delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 170px;
+  height: 50px;
+  border: none;
+  border-radius: 50px;
+  background: #FF93A6;
+}
+
+.delete p {
+  color: #FFF;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+/* calendar */
+
+
 .second-section {
     display: flex;
     gap: 41px;
 }
 
-/* calendar */
+.time {
+  display: flex;
+  gap: 43px;
+  align-items: center;
+}
+
+.buttons-click{
+  display: flex;
+  gap: 10px;
+}
+
+.buttons-click .arrow {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #fff;
+  fill: #FFF;
+  filter: drop-shadow(0px 4px 10px rgba(5, 51, 84, 0.05));
+}
+
+.arrow-left {
+  display: flex;
+  align-items: center;
+  padding-left: 13px;
+}
+.arrow-right {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+span .year {
+  color: #053354;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.action-button {
+  width: 140px;
+  height: 35px;
+  background: #FFF;
+  border-radius: 50px;
+  border: 1px solid rgba(24, 164, 225, 0.30);
+  color: #18A4E1;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  width: 830.5px;
+  height: 655px;
+  flex-shrink: 0;
+  gap: 31px;
+}
+
+
 .custom-table {
-    
-    flex-shrink: 0;
+  width: 830px;
+  max-height: 587px;
   }
   
   table {
