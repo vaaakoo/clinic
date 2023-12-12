@@ -15,6 +15,7 @@ import { ClientPageComponent } from './client-page/client-page.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { DoctorPageComponent } from './doctor-page/doctor-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BookingPageComponent } from './booking-page/booking-page.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     RegistrationComponent,
     ClientPageComponent,
     AdminPageComponent,
-    DoctorPageComponent
+    DoctorPageComponent,
+    BookingPageComponent
   ],
   imports: [
     BrowserModule,

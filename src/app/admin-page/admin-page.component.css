@@ -103,16 +103,69 @@
 .left-section {
   display: flex;
   flex-direction: column;
+  min-width: 750px;
+  min-height: 426px;
   gap: 61px;
 }
 .user {
     margin-top: 70px;
-    width: 750px;
-    height: 426px;
+    width: 100%;
     flex-shrink: 0;
-    border-radius: 10px;
-    background: #FFF;
-    box-shadow: 0px 4px 30px 0px 
+
+}
+
+.card-columns {
+  display: flex;
+  gap: 43px;
+  padding: 30px 50px 25px 37px;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0px 4px 30px 0px rgba(5, 51, 84, 0.05);
+}
+.middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.middle .picture {
+  width: 100%;
+  max-height: 315px;
+  margin-bottom: 10px;
+}
+
+.roll p {
+  color: #053354;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 1px;
+}
+.middle .card-name {
+  color: #18A4E1;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 5px;
+}
+
+.middle .card-category {
+  color: rgba(5, 51, 84, 0.30);
+  font-family: 'FiraGO';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 7px;
+}
+
+.middle .stars img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0; 
 }
 
 .change-sect {
@@ -175,18 +228,60 @@
   line-height: normal;
 }
 
-/* calendar */
+.card-middle {
+  display: flex;
+  flex-direction: column;
+  margin-top: 19px;
+  gap: 26px;
+}
 
+.card-right {
+  display: flex;
+  flex-direction: column;
+  margin-top: 19px;
+}
+
+
+
+.card-middle-grid {
+  display: flex;
+  gap: 12px;
+}
+
+.write-changes {
+  margin-top: 9px;
+  display: grid;
+}
+
+.write-changes h3 {
+  color: #053354;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.write-changes p {
+  color: rgba(5, 51, 84, 0.30);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
 
 .second-section {
     display: flex;
     gap: 41px;
 }
 
+
+/* calendar */
+
 .time {
   display: flex;
   gap: 43px;
   align-items: center;
+  margin-left: 49px;
 }
 
 .buttons-click{

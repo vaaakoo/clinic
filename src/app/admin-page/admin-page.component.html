@@ -19,10 +19,59 @@
                 <button>ექიმი</button>
             </div>
         </div>
-
+<!-- second-section -->
         <div class="second-section">
             <div class="left-section">
-                <div class="user"></div>
+                <div class="user">
+                    <div class="card-columns">
+                        <div class="middle">
+                            <img class="picture" src="../../assets/Ellipse5.png" alt="">
+                            <p class="card-name">გიორგი ხორავა</p>
+                            <p class="roll">ექიმი</p>
+                            <p class="card-category">კარდიოლოგი / არითმოლოგი</p>
+                            <div class="stars">
+                                <img src="../../assets/material-symbols_star-rounded.png" alt="">
+                                    <img src="../../assets/material-symbols_star-rounded.png" alt="">
+                                    <img src="../../assets/material-symbols_star-rounded.png" alt="">
+                                    <img src="../../assets/material-symbols_star-rounded.png" alt="">
+                                    <img src="../../assets/material-symbols_star-rounded.png" alt="">
+                            </div>
+                        </div>
+                        <div class="card-middle">
+                            <div class="card-middle-grid">
+                                <span><img src="../../assets/edit-svgrepo-com2-dark.png" alt=""></span>
+                                <div class="write-changes">
+                                    <h3>პირადი ნომერი</h3>
+                                    <p>00000000000</p>
+                                </div>
+                            </div>
+                            <div class="card-middle-grid">
+                                <span><img src="../../assets/edit-svgrepo-com2-grey.png" alt=""></span>
+                                <div class="write-changes">
+                                    <h3>Email</h3>
+                                    <p>clinic@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="card-middle-grid">
+                                <span><img src="../../assets/edit-svgrepo-com2-grey.png" alt=""></span>
+                                <div class="write-changes">
+                                    <h3>პაროლის შეცვლა</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-right">
+                            <div class="card-middle-grid">
+                                <span><img src="../../assets/edit-svgrepo-com2-grey.png" alt=""></span>
+                                <div class="write-changes">
+                                    <h3>დაჯავშნილია :</h3>
+                                    <p>( 20 )</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  ცვლილებების ღილაკები -->
+                
                 <div class="change-sect">
                     <button class="adding">
                         <p>+ დამატება</p>
@@ -37,34 +86,33 @@
                     </button>
                 </div>
             </div>
-            <div>
+
                 <!-- ცხრილი -->
-        <div class="calendar">
-            <div class="time">
-                <span class="year">2023</span>
-                <div class="buttons-click">
-                    <span class="arrow arrow-left "><img src="../../assets/material-symbols_arrow-back-ios-rounded.png" alt=""></span>
-                    <button class="action-button">აპრილი</button>
-                    <span class="arrow arrow-right"><img src="../../assets/material-symbols_arrow-back-ios-rounded (1).png" alt=""></span>
+            <div class="calendar">
+                <div class="time">
+                    <span class="year">2023</span>
+                    <div class="buttons-click">
+                        <span class="arrow arrow-left "><img src="../../assets/material-symbols_arrow-back-ios-rounded.png" alt=""></span>
+                        <button class="action-button">აპრილი</button>
+                        <span class="arrow arrow-right"><img src="../../assets/material-symbols_arrow-back-ios-rounded (1).png" alt=""></span>
+                    </div>
                 </div>
-            </div>
-            <div class="custom-table">
-                <table>
-                    <!-- Table Headers -->
-                    <tr class="header-row">
-                    <th colspan="8">Header without Border Divider</th>
-                    </tr>
-                    <!-- Table Rows -->
-                    <ng-container *ngFor="let row of rows; let rowIndex = index">
-                    <tr class="data-row" [class.without-border-divider]="rowIndex === 0">
-                        <td *ngFor="let cell of row"></td>
-                    </tr>
-                    </ng-container>
-                </table>
-            </div>
-              
-              
-        </div>
+                <div class="custom-table">
+                    <table>
+                        <!-- Table Headers -->
+                        <tr class="header-row">
+                        <th colspan="8">Header without Border Divider</th>
+                        </tr>
+                        <!-- Table Rows -->
+                        <ng-container *ngFor="let row of rows; let rowIndex = index">
+                        <tr class="data-row" [class.without-border-divider]="rowIndex === 0">
+                            <td *ngFor="let cell of row"></td>
+                        </tr>
+                        </ng-container>
+                    </table>
+                </div>
+                
+                
             </div>
         </div>
     </div>

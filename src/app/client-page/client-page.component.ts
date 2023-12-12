@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./client-page.component.css']
 })
 export class ClientPageComponent {
-
+  rows: number[][] = Array.from({ length: 9 }, () => Array(8).fill(0));
 }
