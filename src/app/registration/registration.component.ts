@@ -30,8 +30,8 @@ export class RegistrationComponent implements OnInit {
       email:['', Validators.required],
       password:['', Validators.required],
       category: ['', Validators.required],
-      image: ['', Validators.required],
-      cv: ['', Validators.required],
+      image: ['', Validators.requiredTrue],
+      cv: ['', Validators.requiredTrue],
       role: ['doctor']
     })
     this.showDropdown();

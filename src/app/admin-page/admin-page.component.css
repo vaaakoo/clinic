@@ -76,27 +76,40 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    cursor: pointer;
+}
 
+.headers-p p.active,
+.headers-p p:hover {
+    color: #18A4E1;
 }
 
 .headers2 {
     display: flex;
     gap: 20px;
 }
-.headers2 button{
-    width: 350px;
-    height: 50px;
-    flex-shrink: 0;
-    border-radius: 50px;
-    border: 1px solid rgba(24, 164, 225, 0.30);
-    background: #FFF;
-    color: #18A4E1;
 
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+.headers2 button {
+  width: 350px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  border: 1px solid rgba(24, 164, 225, 0.30);
+  background: #FFF;
+  color: #18A4E1;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  cursor: pointer;
 }
+
+.headers2 button.active,
+.headers2 button:hover {
+  background: #F0FAFF;
+  outline: none;
+}
+
 
 /* second-section */
 

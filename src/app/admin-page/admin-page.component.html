@@ -8,16 +8,17 @@
                     <span class=" rectangle-3"></span>
                 </div>
                 <div class="headers-p">
-                    <p>რეგისტრაცია</p>
-                    <p>კატეგორიები</p>
-                    <p>ექიმები</p>
+                    <p [class.active]="activeTab === 'registration'" (click)="setActiveTab('registration')">რეგისტრაცია</p>
+                    <p [class.active]="activeTab === 'categories'" (click)="setActiveTab('categories')">კატეგორიები</p>
+                    <p [class.active]="activeTab === 'doctors'" (click)="setActiveTab('doctors')">ექიმები</p>
                 </div>
             </div>
             <div class="headers2">
-                <button>ექიმი</button>
-                <button>ექიმი</button>
-                <button>ექიმი</button>
+                <button [class.active]="activeRole === 'doctor'" (click)="setActiveRole('doctor')">ექიმი</button>
+                <button [class.active]="activeRole === 'user'" (click)="setActiveRole('user')">მომხმარებელი</button>
+                <button [class.active]="activeRole === 'admin'" (click)="setActiveRole('admin')">ადმინისტრატორი</button>
             </div>
+            
         </div>
 <!-- second-section -->
         <div class="second-section">

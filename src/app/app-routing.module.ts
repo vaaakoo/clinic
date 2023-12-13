@@ -14,7 +14,7 @@ import { BookingPageComponent } from './booking-page/booking-page.component';
 const routes: Routes = [
     {path: 'admin-page/category', component: CategoryComponent},
   { path: 'client-reg', component: ClientRegistrationComponent },
-  { path: 'registration', component: RegistrationComponent },
+  { path: 'admin-page/registration', component: RegistrationComponent },
   { path: 'booking', component: BookingPageComponent },
   {path: 'doctor-page', component: DoctorPageComponent},
   {path: 'admin-page', component: AdminPageComponent},
