@@ -22,7 +22,7 @@ export class AdminPageComponent {
     if (tab === 'categories') {
       this.router.navigate(['/admin-page/category']);
     }
-    // Add other conditions if needed
+
   }
 
   setActiveRole(role: string) {

@@ -19,7 +19,6 @@ export class RegistrationComponent implements OnInit {
 
   categoryList: string[] = []; 
   public signUpForm!: FormGroup;
-  type: string = 'password';
   constructor(private fb : FormBuilder, private auth: AuthService, private router: Router, private http: HttpClient ) { }
 
   ngOnInit() {
@@ -30,9 +29,9 @@ export class RegistrationComponent implements OnInit {
       email:['', Validators.required],
       password:['', Validators.required],
       category: ['', Validators.required],
-      image: ['', Validators.requiredTrue],
-      cv: ['', Validators.requiredTrue],
-      role: ['doctor']
+      // image: ['', Validators.requiredTrue],
+      // cv: ['', Validators.requiredTrue],
+
     })
     this.showDropdown();
   }
@@ -80,28 +79,4 @@ export class RegistrationComponent implements OnInit {
       ValidateForm.validateAllFormFields(this.signUpForm); 
     }
   }
-  
-  // upload image
-  uploadFile = (files:any) => {
-    if (files.length === 0) {
-      return;
-    }
-    let fileToUpload = <File>files[0];
-    const formData = new FormData();
-    formData.append('file', fileToUpload, fileToUpload.name);
-
-    this.http.post('http://localhost:5100/api/User/upload', formData, { reportProgress: true, observe: 'events' })
-      .subscribe({
-        next: (event: any) => { // Specify the type of event
-          if (event.type === HttpEventType.UploadProgress)
-            this.progress = Math.round(100 * event.loaded / event.total);
-          else if (event.type === HttpEventType.Response) {
-            this.message = 'Upload success.';
-            this.onUploadFinished.emit(event.body);
-          }
-        },
-        error: (err: HttpErrorResponse) => console.log(err)
-      });
-  }
-
 }
