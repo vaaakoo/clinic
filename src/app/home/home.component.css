@@ -195,7 +195,12 @@
 }
 
 
-
+.doctors {
+  width: 1211px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
 
 /* home.component.css */
 .square-container {
@@ -311,4 +316,21 @@
     margin-bottom: 6px;
   }
 
- 
+ .read-more {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: auto;
+}
+.read-more p {
+  padding-right: 18px;
+  color: #053354;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.read-more img {
+  margin-left: auto;
+}

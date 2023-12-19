@@ -255,6 +255,7 @@
 .my-book {
   display: flex;
   gap: 7px;
+  margin-bottom: 29px;
 }
 .my-book:first-child {
   color: #18A4E1;
@@ -471,7 +472,7 @@ td:nth-last-child(2) {
     display: flex;
     /* align-items: center; */
     gap: 20px;
-    justify-content: end;
+    justify-content: flex-end;
   }
   
   .redacted-button {
