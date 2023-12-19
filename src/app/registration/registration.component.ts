@@ -1,52 +1,82 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import ValidateForm from '../../helpers/validationform';
+import { Router } from '@angular/router';
+import { HttpClient, HttpEventType, HttpErrorResponse } from '@angular/common/http';
+import { EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css']
 })
-export class RegistrationComponent {
-  user = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    idNumber: '',
-    password: '',
-    selectedCategory: ''
-  };
+export class RegistrationComponent implements OnInit {
 
-  categoryList: string[] = []; // Initialize as an empty array
+  progress!: number;
+  message!: string;
+  @Output() public onUploadFinished = new EventEmitter();
+
+  categoryList: string[] = []; 
+  public signUpForm!: FormGroup;
+  constructor(private fb : FormBuilder, private auth: AuthService, private router: Router, private http: HttpClient ) { }
 
   ngOnInit() {
-    // You might want to call this in ngOnInit or any other lifecycle hook based on your requirements
+    this.signUpForm = this.fb.group({
+      firstName:['', Validators.required],
+      lastName:['', Validators.required],
+      idNumber:['', Validators.required],
+      email:['', Validators.required],
+      password:['', Validators.required],
+      category: ['', Validators.required],
+      // image: ['', Validators.requiredTrue],
+      // cv: ['', Validators.requiredTrue],
+
+    })
     this.showDropdown();
   }
 
   showDropdown() {
-    // Simulate an API call with setTimeout
     setTimeout(() => {
-      // Replace this with your actual API call to fetch categories
-      this.categoryList = ['Category 1', 'Category 2', 'Category 3'];
-    }, 1000); // Simulate a delay of 1 second
+      this.categoryList = ['ანდროლოგი',
+      'ანესთეზიოლოგი',
+      'კარდიოლოგი',
+      'კოსმეტოლოგი',
+      'ლაბორანტი',
+      'ოჯახის ექიმი',
+      'პედიატრი',
+      'ტოქსიკოლოგი',
+      'ტრანსფუზილოგი',
+      'გინეკოლოგი',
+      'დერმატოლოგი',
+      'ენდოკრინოლოგი',
+      'გასტროენტეროლოგი',
+      'თერაპევტი',];
+    }, 1000); 
   }
 
   onSubmit() {
-    console.log('Form submitted:', this.user);
+    if (this.signUpForm.valid) {
+      console.log(this.signUpForm.value);
+      let signUpObj = {
+        ...this.signUpForm.value
+
+      }
+      this.auth.signUp(signUpObj)
+      .subscribe({
+        next:(res=>{
+          console.log(res.message);
+          this.signUpForm.reset();
+          this.router.navigate(['home']);
+          alert(res.message)
+        }),
+        error:(err=>{
+          alert(err?.error.message)
+          console.log(err.message)
+        })
+      })
+    } else {
+      ValidateForm.validateAllFormFields(this.signUpForm); 
+    }
   }
-
-  onImageChange(event: any) {
-    const fileList: FileList | null = event.target.files;
-    if (fileList && fileList.length > 0) {
-        const imageFile: File = fileList[0];
-
-    }
-}
-
-  onCVChange(event: any) {
-    const fileList: FileList | null = event.target.files;
-    if (fileList && fileList.length > 0) {
-        const cvFile: File = fileList[0];
-
-    }
-}
 }

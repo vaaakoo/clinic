@@ -7,5 +7,5 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoctorPageComponent  {
 
-  rows: number[][] = Array.from({ length: 10 }, () => Array(8).fill(0));
+  rows: number[][] = Array.from({ length: 9 }, () => Array(8).fill(0));
 }

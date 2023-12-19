@@ -1,4 +1,3 @@
-
 <div class="home-hero">
     <div class="categories">
       <!-- კატეგორიები -->
@@ -91,82 +90,73 @@
               </div>
           </div>
       </div>
-      <!-- ექიმები -->
-      <div class="doctors">
-          <div class="hero-doctor">
-              <div class="upper">
-                  <img class="main-image" src="../../assets/Ellipse14.png" alt="">
-                  <h4>გიორგი ხორავა</h4>
-                  <h6>ექიმი</h6>
-                  <p>კარდიოლოგი / არითმოლოგი</p>
-                  <div class="doctors-stars">
-                      <img src="../../assets/material-symbols_star-rounded.png" alt="">
-                      <img src="../../assets/material-symbols_star-rounded.png" alt="">
-                      <img src="../../assets/material-symbols_star-rounded.png" alt="">
+
+      <div class="doctor-hero">
+          <!-- ექიმები -->
+          <div class="doctors">
+              <div class="hero-doctor">
+                  <div class="upper">
+                      <img class="main-image" src="../../assets/Ellipse14.png" alt="">
+                    <div class="upper-child">
+                        <h4>გიორგი ხორავა</h4>
+                        <p>კარდიოლოგი / არითმოლოგი</p>
+                        <div class="doctors-stars">
+                            <img src="../../assets/material-symbols_star-rounded.png" alt="">
+                            <img src="../../assets/material-symbols_star-rounded.png" alt="">
+                            <img src="../../assets/material-symbols_star-rounded.png" alt="">
+                            <img src="../../assets/material-symbols_star-rounded.png" alt="">
+                            <img src="../../assets/material-symbols_star-rounded.png" alt="">
+                        </div>
+                    </div>
                   </div>
-              </div>
-              <div class="middle-first">
-                  <h4>პირადი ნომერი</h4>
-                  <p>00000000000</p>
-              </div>
-  
-              <div class="middle-second">
-                  <div class="middle-first">
-                      <h4>Email :</h4>
-                      <p>clinic@gmail.com</p>
+                  <img src="../../assets/Vector 7.png" alt="">
+                  <div class="cv-style">
+                    <p><span class="blue-text">2017 - დღემდე</span>, ჩვენი კლინიკის გენერალური დირექტორი</p>
+                    <p><span class="blue-text">2002 - დღემდე</span>, ჩვენი კომპიუტერული ტომოგრაფიის განყოფილების ხელმძღვანელი</p>
+                    <p><span class="blue-text">1995 - დღემდე</span>, კარდიოლოგი / არითმოლოგი</p>
+
                   </div>
-                  <h4>პაროლის შეცვლა</h4>
-              </div>
-  
-              <div class="middle-first">
-                  <h4>დაჯავშნილია :</h4>
-                  <p>( 20 )</p>
-              </div>
+              </div> 
           </div>
+          <!-- ცხრილი -->
+        <div class="calendar">
+           
+                <div class="time">
+                    <span class="year">2023</span>
+                    <div class="buttons-click">
+                        <span class="arrow arrow-left "><img src="../../assets/material-symbols_arrow-back-ios-rounded.png" alt=""></span>
+                        <button class="action-button">აპრილი</button>
+                        <span class="arrow arrow-right"><img src="../../assets/material-symbols_arrow-back-ios-rounded (1).png" alt=""></span>
+                    </div>
+                </div>
+        <div class="time-and-table">
+                <div class="custom-table">
+                    <table>
+                        <!-- Table Headers -->
+                        <tr class="header-row">
+                        <th colspan="8">Header without Border Divider</th>
+                        </tr>
+                        <!-- Table Rows -->
+                        <ng-container *ngFor="let row of rows; let rowIndex = index">
+                        <tr class="data-row" [class.without-border-divider]="rowIndex === 0">
+                            <td *ngFor="let cell of row"></td>
+                        </tr>
+                        </ng-container>
+                    </table>
+                </div>
+            
+          <div class="change-sect">
+              <button class="redact">
+                  <span><img src="../../assets/edit-svgrepo-com 2.png" alt=""></span>
+                  <p>რედაქტირება</p>
+              </button>
+            <button class="delete">
+                <span><img src="../../assets/delete-file-svgrepo-com 3.png" alt=""></span>
+                <p>წაშლა</p>
+            </button>
+        </div>
+    </div>
           
       </div>
-      <!-- ცხრილი -->
-      <div class="calendar">
-        <div class="my-book">
-          <p>ჩემი ჯავშანი</p>
-          <p>( 2 )</p>
-        </div>
-        <div class="time">
-            <span class="year">2023</span>
-            <div class="buttons-click">
-                <span class="arrow arrow-left "><img src="../../assets/material-symbols_arrow-back-ios-rounded.png" alt=""></span>
-                <button class="action-button">აპრილი</button>
-                <span class="arrow arrow-right"><img src="../../assets/material-symbols_arrow-back-ios-rounded (1).png" alt=""></span>
-            </div>
-        </div>
-        <div class="custom-table">
-            <table>
-                <!-- Table Headers -->
-                <tr class="header-row">
-                <th colspan="8">Header without Border Divider</th>
-                </tr>
-                <!-- Table Rows -->
-                <ng-container *ngFor="let row of rows; let rowIndex = index">
-                <tr class="data-row" [class.without-border-divider]="rowIndex === 0">
-                    <td *ngFor="let cell of row"></td>
-                </tr>
-                </ng-container>
-            </table>
-        </div>
-        <div class="change-sect">
-          <div class="redacted-button">
-            <button class="redact">
-                <span><img src="../../assets/edit-svgrepo-com 2.png" alt=""></span>
-                <p>რედაქტირება</p>
-            </button>
-            <p class="comment-redact">*აღწერის ცვლილება</p>
-          </div>
-          <button class="delete">
-              <span><img src="../../assets/delete-file-svgrepo-com 3.png" alt=""></span>
-              <p>წაშლა</p>
-          </button>
       </div>
-        
-        
-    </div>
 </div>

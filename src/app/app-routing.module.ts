@@ -7,13 +7,15 @@ import { RegistrationComponent } from './registration/registration.component';
 import { DoctorPageComponent } from './doctor-page/doctor-page.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { ClientPageComponent } from './client-page/client-page.component';
+import { BookingPageComponent } from './booking-page/booking-page.component';
 
 
 
 const routes: Routes = [
-  {path: 'admin-page/category', component: CategoryComponent},
+    {path: 'admin-page/category', component: CategoryComponent},
   { path: 'client-reg', component: ClientRegistrationComponent },
-  { path: 'registration', component: RegistrationComponent },
+  { path: 'admin-page/registration', component: RegistrationComponent },
+  { path: 'booking', component: BookingPageComponent },
   {path: 'doctor-page', component: DoctorPageComponent},
   {path: 'admin-page', component: AdminPageComponent},
   {path: 'client-page', component: ClientPageComponent},

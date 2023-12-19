@@ -126,23 +126,44 @@
             
         </div>
         <!-- ცხრილი -->
-        <div class="calendar">
-            
-            <div class="custom-table">
-  <table>
-    <!-- Table Headers -->
-    <tr class="header-row">
-      <th colspan="8">Header without Border Divider</th>
-    </tr>
-    <!-- Table Rows -->
-    <ng-container *ngFor="let row of rows; let rowIndex = index">
-      <tr class="data-row" [class.without-border-divider]="rowIndex === 0">
-        <td *ngFor="let cell of row"></td>
-      </tr>
-    </ng-container>
-  </table>
-</div>
-              
-              
+      <div class="calendar">
+
+        <div class="time">
+            <span class="year">2023</span>
+            <div class="buttons-click">
+                <span class="arrow arrow-left "><img src="../../assets/material-symbols_arrow-back-ios-rounded.png" alt=""></span>
+                <button class="action-button">აპრილი</button>
+                <span class="arrow arrow-right"><img src="../../assets/material-symbols_arrow-back-ios-rounded (1).png" alt=""></span>
+            </div>
         </div>
+        <div class="custom-table">
+            <table>
+                <!-- Table Headers -->
+                <tr class="header-row">
+                <th colspan="8">Header without Border Divider</th>
+                </tr>
+                <!-- Table Rows -->
+                <ng-container *ngFor="let row of rows; let rowIndex = index">
+                <tr class="data-row" [class.without-border-divider]="rowIndex === 0">
+                    <td *ngFor="let cell of row"></td>
+                </tr>
+                </ng-container>
+            </table>
+        </div>
+        <div class="change-sect">
+          <div class="redacted-button">
+            <button class="redact">
+                <span><img src="../../assets/edit-svgrepo-com 2.png" alt=""></span>
+                <p>რედაქტირება</p>
+            </button>
+            <p class="comment-redact">*აღწერის ცვლილება</p>
+          </div>
+          <button class="delete">
+              <span><img src="../../assets/delete-file-svgrepo-com 3.png" alt=""></span>
+              <p>წაშლა</p>
+          </button>
+      </div>
+        
+        
+    </div>
 </div>
