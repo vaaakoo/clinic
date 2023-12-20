@@ -251,24 +251,7 @@
   gap: 31px;
 }
 
-.my-book {
-  display: flex;
-  gap: 7px;
-}
-.my-book:first-child {
-  color: #18A4E1;
-  font-size: 26px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-}
-.my-book :last-child{
-  color: rgba(5, 51, 84, 0.30);
-  font-size: 26px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-}
+
 
 .time {
   display: flex;

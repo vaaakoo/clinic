@@ -10,14 +10,12 @@
   }
 
   .nav-bar-1 {
-    display: flex; /* Use flexbox to create a horizontal layout */
+    display: flex; 
     margin-top: 17px;
-    align-items: center; /* Center the content vertically */
+    align-items: center; 
     margin-left: auto;
     margin-right: auto;
-    max-width: 1621px; /* Set max-width */
-    
-    
+    max-width: 1621px; 
   }
 
   .logo-link {
@@ -27,8 +25,8 @@
   }
   
   .logo-link img {
-    width: 90px; /* Adjust the width of the logo image */
-    height: 66px; /* Adjust the height of the logo image */
+    width: 90px; 
+    height: 66px; 
     flex-shrink: 0;
   }
   
@@ -43,11 +41,11 @@
   }
  
   .nav-bar {
-    list-style: none; /* Remove default list styles */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
     margin-left: 150px;
-    display: flex; /* Use flexbox to create a horizontal layout */
+    display: flex; 
     gap: 32px;
   }
   
@@ -65,6 +63,7 @@
     margin-left: 47px;    
     display: flex;
     gap: 29px;
+    margin-right: 0px;
   }
 
   .navbar-button2 {
@@ -74,7 +73,7 @@
   }
 
   .button-reg-aut {
-    max-width: 280px;
+    min-width: 280px;
     padding: 11px 23px 11px 23px;
     border-radius: 25px;
     border: 0;
@@ -123,10 +122,10 @@
   .button-eng {
     width: 80px;
     height: 45px;
-    flex-shrink: 0;
     border-radius: 25px;
     border: 0;
     background: #F0FAFF;
+    padding: 0px;
   }
   
   .button-eng span {
