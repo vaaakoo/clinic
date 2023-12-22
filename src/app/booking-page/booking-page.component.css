@@ -430,17 +430,14 @@ td:nth-last-child(2) {
 
 }
 
-.unauthorized-message {
+.booking-message {
   position: absolute;
-  display: flex;
-  align-items: center;
-  margin-left: 256px;
-  margin-top: -42px;
-
-  width: 320px;
-  height: 78px;
+  margin-left: 589px;
+  margin-top: -278px;
+  width: 420px;
+  height: 263px;
+  flex-shrink: 0;
   color: #2f0c0c;
-  padding: 10px;
   border-radius: 10px;
   background: #FFF;
   box-shadow: 0px 4px 30px 0px rgba(5, 51, 84, 0.20);
@@ -448,6 +445,85 @@ td:nth-last-child(2) {
   text-align: center;
 }
 
+.booking-message-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 25px 31px 20px 32px;
+  text-align: left;
+}
+
+.booking-message-box:first-child {
+  color: #3ACF99;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.booking-message-box .last-child {
+  color: #053354;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.booking-message-box button {
+  width: 170px;
+  height: 50px;
+  margin-left: auto;
+}
+.adding {
+  border: none;
+  border-radius: 50px;
+  background: #3ACF99;
+  color: #FFF;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.booking-message-box textarea {
+  width: 357px;
+  height: 90px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid #ECF2F8;
+  resize: none;
+}
+
+.unauthorized-message {
+  position: absolute;
+  margin-left: 256px;
+  margin-top: -42px;
+  padding: 18px 32px;
+  width: 320px;
+  height: 78px;
+  color: #2f0c0c;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0px 4px 30px 0px rgba(5, 51, 84, 0.20);
+  z-index: 999;  
+  text-align: center;
+}
+
+.unauthorized-message p {
+  color: #FF2C52;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.unauthorized-message span {
+  color: #053354;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
 
   /* changes buttons */
 
