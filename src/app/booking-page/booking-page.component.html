@@ -120,7 +120,6 @@
           </div>
           <!-- ცხრილი -->
         <div class="calendar">
-           
               <div class="time">
                 <span class="year">2023</span>
                 <div class="buttons-click">
@@ -129,6 +128,7 @@
                     <span class="arrow arrow-right"><img src="../../assets/material-symbols_arrow-back-ios-rounded (1).png" alt=""></span>
                 </div>
             </div>
+
               <div class="time-and-table">
                 <div class="custom-table">
                   <table>     
@@ -149,19 +149,24 @@
                             <td>{{ getTimeRange(i) }}</td> <!-- Display time range in the first column -->
                             <ng-container *ngFor="let col of row.cols; let j = index">
                               <td
-                                [class.activated]="col.activated"
-                                (click)="toggleCellActivation(i, j)"
+                                [class.activated]="col.activated && isAuthorized"
+                                [class.disabled]="!isAuthorized && !col.activated"
+                                (click)="isAuthorized ? toggleCellActivation(i, j) : showUnauthorizedMessage()"
                               >
-                              <span *ngIf="col.activated" class="activated-text"><p>My <br /> Booking</p> 
+                              <span *ngIf="col.activated && isAuthorized" class="activated-text">
+                                <p>My <br /> Booking</p> 
                                 <span class="delete-button" (click)="deleteCell(i, j)">
-                                <img src="../../assets/Group 3.png" alt=""></span>
-                            </span>
-                              
-                              </td>
+                                  <img src="../../assets/Group 3.png" alt="">
+                                </span>
+                              </span>
+                            </td>
                             </ng-container>
                           </tr>
                         </ng-container>
                       </tbody>
+                      <div *ngIf="unauthorizedMessageShown" class="unauthorized-message">
+                        <p>დასაჯავშნათ გთხოვთ გაიაროთ </p>
+                      </div>
             </table>
                 </div>
             

@@ -5,8 +5,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import ValidateForm from 'src/helpers/validationform';
 import 'jquery';
 
-// import { NgToastService } from 'ng-angular-popup';
-// import { UserStoreService } from 'src/app/services/user-store.service';
 
 @Component({
   selector: 'app-header',
@@ -25,8 +23,6 @@ export class HeaderComponent implements OnInit {
     private fb: FormBuilder,
     private auth: AuthService,
     private router: Router,
-    // private toast: NgToastService,
-    // private userStore: UserStoreService
   ) {}
   
 
@@ -74,20 +70,14 @@ export class HeaderComponent implements OnInit {
             this.isAdministrator = true;
           } else {
             this.isLoggedIn = true;
+            this.auth.setAuthenticationStatus(true);
           }
-
           console.log(this.isAdministrator + "is admin");
           console.log(this.isLoggedIn + "is logged")
-          // this.toast.success({detail:"SUCCESS", summary:res.message, duration: 5000});
-
           this.submissionSuccess = true;
-          
-          
         },
         error: (err) => {
           alert(err?.error.message)
-          // this.toast.error({detail:"ERROR", summary:"Something when wrong!", duration: 5000});
-          // console.log(err);
         },
       });
     } else {

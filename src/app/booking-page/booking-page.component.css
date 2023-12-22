@@ -430,6 +430,25 @@ td:nth-last-child(2) {
 
 }
 
+.unauthorized-message {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  margin-left: 256px;
+  margin-top: -42px;
+
+  width: 320px;
+  height: 78px;
+  color: #2f0c0c;
+  padding: 10px;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0px 4px 30px 0px rgba(5, 51, 84, 0.20);
+  z-index: 999;  
+  text-align: center;
+}
+
+
   /* changes buttons */
 
   .change-sect {

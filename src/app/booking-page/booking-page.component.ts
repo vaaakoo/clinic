@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-booking-page',
@@ -8,6 +9,11 @@ import { Router } from '@angular/router';
 })
 export class BookingPageComponent {
 
+  isAuthorized: boolean = false;
+  unauthorizedMessageShown: boolean = false;
+
+
+  activeMessageBox: boolean = false;
   activeTab: string = 'doctors';
   activeRole: string = 'doctor';
   tableData: { cols: { value: string; activated: boolean }[] }[] = [];
@@ -22,7 +28,7 @@ export class BookingPageComponent {
   ];
 
 
-  constructor( private router: Router ) { }
+  constructor( private router: Router, private authService: AuthService ) { }
   
   ngOnInit() {
     for (let i = 1; i <= 9; i++) {
@@ -31,14 +37,24 @@ export class BookingPageComponent {
         row.cols.push({ value: `${i}-${j}`, activated: false });
       }
       this.tableData.push(row);
-    }
+    };
+    this.authService.isAuthenticated.subscribe((loggedIn) => {
+      this.isAuthorized = loggedIn;
+    });
   }
 
   toggleCellActivation(rowIndex: number, colIndex: number) {
     const isLastTwoColumns = colIndex >= 5;
-    if (!isLastTwoColumns) {
+    if (!isLastTwoColumns && !this.isAuthorized) {
       this.tableData[rowIndex].cols[colIndex].activated = !this.tableData[rowIndex].cols[colIndex].activated;
+    } else {
+      this.showUnauthorizedMessage();
+      
     }
+  }
+  showUnauthorizedMessage() {
+    console.log("please autorize acount");
+    this.unauthorizedMessageShown = true;
   }
 
   deleteCell(rowIndex: number, colIndex: number) {
@@ -56,18 +72,5 @@ export class BookingPageComponent {
     return `${startHour}:00 - ${endHour}:00`;
   }
 
-  setActiveTab(tab: string) {
-    this.activeTab = tab;
-    if (tab === 'registration') {
-      this.router.navigate(['/admin-page/registration']);
-    }
-    if (tab === 'categories') {
-      this.router.navigate(['/admin-page/category']);
-    }
 
-  }
-
-  setActiveRole(role: string) {
-    this.activeRole = role;
-  }
 }

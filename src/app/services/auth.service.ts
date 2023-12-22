@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs/internal/Observable';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +9,14 @@ import { Observable } from 'rxjs/internal/Observable';
 export class AuthService {
 
   private baseUrl: string = 'http://localhost:5100/api/User/';
+  private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
 
-  constructor(private http: HttpClient, private router: Router) {
 
-   }
+  constructor(private http: HttpClient, private router: Router) {}
 
+  get isAuthenticated(): Observable<boolean> {
+    return this.isAuthenticatedSubject.asObservable();
+  }
   signUp(userObj: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}register`, userObj);
   }
@@ -25,5 +28,9 @@ export class AuthService {
 
   getUsers(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}getUser`);
+  }
+
+  setAuthenticationStatus(isAuthenticated: boolean): void {
+    this.isAuthenticatedSubject.next(isAuthenticated);
   }
 }
